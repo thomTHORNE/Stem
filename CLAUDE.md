@@ -166,6 +166,26 @@ Partial promotion is allowed for sections that stand on their own justification.
 
 `Learning/` holds topic-based explainers that branch off from project work into broader concepts. Files are written with Stem as the running example but cover general technical ground — canvas rendering, pointer input, geometry, Electron's process model. They are not spec, do not define behavior or decisions, and carry no authority over implementation. Read them when the user references a prior explanation or asks to revisit a concept.
 
+### Explainer form
+
+An explainer teaches by putting the reader inside a real scenario before it names anything. This structure is approved and is what a new section should follow:
+
+1. **Open on something the user would actually do.** Not "consider a rectangle" — "you've drawn a stroke and you want to drag it." The concept then arrives as the answer to a problem they already have, rather than as material to get through.
+2. **State the problem as a cost, and let it build.** Concrete numbers, escalating: 40 calculations for one stroke, 8,000 for a board, half a million a second while dragging. Do not rush this part. The weight of the problem is what makes the solution land as necessary rather than arbitrary.
+3. **Turn once, explicitly.** A single line pivoting from problem to answer — "so you don't ask the honest question first." One turn, clearly marked, not a gradual drift into the solution.
+4. **Deliver the solution and its picture together.** The moment the answer arrives it needs a diagram or a worked calculation in the same breath. Prose alone at this point does not land, however clear it is.
+5. **Then charge for it.** Every technique has a price, and the explainer is not finished until the price is shown — worked through the *same* example, not a fresh one.
+6. **Name the alternative that was rejected, and why.** The tradeoff is the teaching. A solution presented without its alternatives is a fact to be memorised, which is what the mentorship directive exists to avoid.
+7. **Close by connecting to a rule already in the spec.** The section ends by making an existing decision legible — the reader should finish it understanding something they had already agreed to.
+
+Supporting rules:
+
+- **One example, carried the whole way through.** The same stroke at the same coordinates demonstrates the win, then the failure, then the tradeoff. Introducing a second example resets the reader's working memory and costs more than it explains.
+- **Demonstrate, then name.** Show the thing working before introducing the word for it. "Broad phase" means nothing to a reader who has not yet watched a broad phase eliminate 197 objects.
+- **Real numbers, taken from the spec.** Where the spec states a figure, use that figure. Invented numbers make a worked example read as hypothetical, which is the one thing it must not be.
+- **Failures stated as symptoms, not as incorrectness.** "The app grabs things you didn't point at" lands. "The hit test returns a false positive" does not.
+- **Pace generously, then stop.** Length spent building a problem is earned. Length spent restating a solution is padding.
+
 ---
 
 ## Tone and writing style

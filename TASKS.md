@@ -119,6 +119,9 @@ Recognition and the `Tab` cycle. The interaction is well specified; its boundari
 <br>
 - [ ] `#4.8` `MINOR` **Poor best-fit suppression**
     Recognition ranks rather than thresholds, so a candidate is always returned — including for a stroke that resembles no primitive at all. Whether a weak best-fit should be suppressed, and against what measure.
+<br>
+- [ ] `#4.9` `GAP` **Recognition against a zero-area bounding box**
+    The ellipse test is the ratio of stroke area to bounding-box area. A perfectly horizontal or vertical stroke has a bounding box of zero area, so that ratio divides by zero and the candidate ranks as `NaN` rather than ranking low. `NaN` fails every comparison it appears in, so where the ellipse lands in the ranked list is decided by the sort implementation rather than by the algorithm — `Tab` on a straight line can offer an ellipse, with nothing having errored. Wider than `#4.5`: a flat stroke is not a single point and is not a candidate for discarding.
 :::
 
 ::: toggle `#5` Connectors
