@@ -296,6 +296,7 @@ Skills print what their skill file specifies. This section governs conversation.
 - When an item is resolved, remove it from TASKS.md entirely. Do not leave completed items in TASKS.md.
 - Decisions recorded in the spec are settled. Reopen one when something new is known — not because it feels uncertain again.
 - Where a spec file states that something is "not yet specified", it must have a corresponding TASKS.md item. An unspecified behavior with no item is invisible.
+- **The spec never references TASKS.md.** No item IDs, no "see TASKS", no pointers to the tracker in any form. TASKS.md tracks work against the spec; the spec is the product of that work and has no knowledge of it. A spec file may state that something is not yet specified — that is a fact about the spec — but naming the item that will resolve it is tracker bookkeeping leaking into the deliverable, and it dangles the moment that item is renumbered or, on resolution, removed.
 - Diagrams are derived, never authoritative. Where a diagram and the prose it illustrates disagree, the prose wins and the diagram is the defect. A change to any field, relationship, or rule a diagram depicts is not complete until that diagram is updated in the same edit. A spec whose picture disagrees with its text is worse than one with no picture, because the picture is what gets read.
 
 ---

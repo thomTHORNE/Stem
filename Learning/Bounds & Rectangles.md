@@ -82,7 +82,7 @@ drag a stroke           CHANGES       untouched        it moves
 
 Two rows out of six edit your document. The other four move your head.
 
-That also settles something you would otherwise have to memorise. Commands operate on the scene, and the viewport is not in the scene — it sits beside `objects` in the board file rather than inside any of them. So pan and zoom never enter the undo stack, and `Cmd+Z` cannot walk back through your scrolling. You do not have to remember that rule separately. It falls out of which column the gesture lands in.
+That also settles something you would otherwise have to memorise. Commands operate on the scene, and the viewport is not in the scene — it sits beside `objects` in the board file rather than inside any of them. So pan and zoom never enter the undo stack, and `Cmd+Z` cannot walk back through your scrolling. `Spec/Architecture/Command Layer.md` states that rule directly, but you do not have to remember it separately: it falls out of which column the gesture lands in.
 
 ### The conversion
 
@@ -452,7 +452,7 @@ Both work. Which one Stem takes is a spec decision, and it isn't made here.
 
 | This document | Spec |
 |---|---|
-| §1 world/screen | `Spec/Features/Canvas & Viewport.md`, `Spec/Architecture/Rendering.md` |
+| §1 world/screen | `Spec/Features/Canvas & Viewport.md`, `Spec/Architecture/Rendering.md`, `Spec/Architecture/Command Layer.md` |
 | §2 bounding boxes | `Spec/Data Model.md` → `BaseObject.bounds` |
 | §3 rectangle forms | `Spec/Data Model.md` → `Rect`, `Point` |
 | §4 normalization | `Spec/Data Model.md` → `Rect` rules |

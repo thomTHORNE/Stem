@@ -56,6 +56,8 @@ This is why strokes store a simplified point array and regenerate their outline 
 
 [Keybindings](Keybindings.md) is the source of truth for these.
 
+No viewport command is undoable. Pan and zoom are not scene mutations and emit no command — see [Command Layer](../Architecture/Command%20Layer.md). `Cmd+0`, `Shift+1` and `Shift+2` are therefore one-way: the way back to a previous view is another viewport command, not `Cmd+Z`.
+
 ---
 
 ## States

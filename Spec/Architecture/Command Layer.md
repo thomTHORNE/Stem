@@ -15,6 +15,16 @@ Two stacks, `undo` and `redo`. **Redo clears on any new command.**
 
 ---
 
+## What is not a command
+
+The rule is scoped to the **scene** — the objects on the board. The viewport is not part of it. `viewport` sits on `BoardFile` beside `objects` rather than inside any of them (see [Data Model — BoardFile](../Data%20Model.md#boardfile)), and [Rendering](Rendering.md) counts a viewport change as a redraw trigger distinct from a scene mutation.
+
+Panning and zooming therefore emit no command. They do not enter the undo stack and they are not journaled. **`Cmd+Z` rewinds the board, never the view.**
+
+This is the scope, not an oversight. Undo reverses changes to what you made; where you were looking when you made it is not one of those changes. An undo stack carrying both makes `Cmd+Z` unpredictable — the user cannot know whether the next press restores a deleted object or scrolls them somewhere else.
+
+---
+
 ## Coalescing
 
 `coalesceKey` handles continuous operations. Dragging one object emits many `MoveCommand`s, and they merge into a single undo step keyed on:
