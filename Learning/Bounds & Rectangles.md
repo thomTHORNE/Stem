@@ -37,6 +37,53 @@ So you use two, and only ever store one of them.
 
 The **viewport** is what connects them: `{ x, y, zoom }`, saved per board. It is not a property of any object — it is a property of *your view of* the objects.
 
+### What you're actually moving
+
+Three things are true while you work, and they are three different kinds of claim:
+
+```
+what you'd say                          what it is     the numbers
+"it's over there, past my notes"        world space    (100, 100)
+"it's near the top-left of my screen"   screen space   (100, 160)
+"I'm zoomed in on that corner"          the viewport   { x: 50, y: 20, zoom: 2 }
+```
+
+Resize the window and watch which of them survive. The first is untouched — you did not go near the board. The second is now false. Nothing about the board changed and everything about the picture did, which is the distinction in one gesture: the first sentence is the document, the second is a rendering of the document that lives for one frame.
+
+The third is why the second was correct the moment you opened this board. It was not the screen position that got saved.
+
+```
+      world space — no edges, ink never moves           screen space
+
+  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·           ┌────────────────┐
+                                                      │                │
+  ·   ·   ┌─────────────────┐   ·   ·   ·   ·         │                │
+          │                 │                         │     ▓▓▓▓▓▓     │
+  ·   ·   │      ▓▓▓        │   ·   ·   ·   ·   ──►   │     ▓▓▓▓▓▓     │
+          │                 │                         │                │
+  ·   ·   └─────────────────┘   ·   ·   ·   ·         │                │
+            viewport { x, y, zoom }                   └────────────────┘
+  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·             what you see
+```
+
+Panning feels like shoving the board around. It never touches it — you moved the frame. Sort every gesture by which column it lands in:
+
+```
+                        the board     the viewport     your screen
+
+two-finger scroll       untouched     x, y             everything slides
+pinch                   untouched     zoom             everything grows
+Cmd+0                   untouched     zoom → 1         back to 100%
+Shift+1                 untouched     all three        content fills the window
+
+draw a stroke           CHANGES       untouched        it appears
+drag a stroke           CHANGES       untouched        it moves
+```
+
+Two rows out of six edit your document. The other four move your head.
+
+That also settles something you would otherwise have to memorise. Commands operate on the scene, and the viewport is not in the scene — it sits beside `objects` in the board file rather than inside any of them. So pan and zoom never enter the undo stack, and `Cmd+Z` cannot walk back through your scrolling. You do not have to remember that rule separately. It falls out of which column the gesture lands in.
+
 ### The conversion
 
 Going from world to screen: subtract where the viewport is, then multiply by zoom.

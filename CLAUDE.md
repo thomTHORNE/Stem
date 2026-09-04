@@ -174,9 +174,10 @@ An explainer teaches by putting the reader inside a real scenario before it name
 2. **State the problem as a cost, and let it build.** Concrete numbers, escalating: 40 calculations for one stroke, 8,000 for a board, half a million a second while dragging. Do not rush this part. The weight of the problem is what makes the solution land as necessary rather than arbitrary.
 3. **Turn once, explicitly.** A single line pivoting from problem to answer — "so you don't ask the honest question first." One turn, clearly marked, not a gradual drift into the solution.
 4. **Deliver the solution and its picture together.** The moment the answer arrives it needs a diagram or a worked calculation in the same breath. Prose alone at this point does not land, however clear it is.
-5. **Then charge for it.** Every technique has a price, and the explainer is not finished until the price is shown — worked through the *same* example, not a fresh one.
-6. **Name the alternative that was rejected, and why.** The tradeoff is the teaching. A solution presented without its alternatives is a fact to be memorised, which is what the mentorship directive exists to avoid.
-7. **Close by connecting to a rule already in the spec.** The section ends by making an existing decision legible — the reader should finish it understanding something they had already agreed to.
+5. **Ground it in what the reader does.** Once the mechanism is on the page, restate it in the reader's own vocabulary before charging for it: the concept as a sentence they would actually say, a test they can run themselves that separates it from its neighbours, and a mapping from their real gestures onto the part of the system each one touches. An abstraction the reader cannot locate in their own behavior will not survive the tradeoff that follows.
+6. **Then charge for it.** Every technique has a price, and the explainer is not finished until the price is shown — worked through the *same* example, not a fresh one.
+7. **Name the alternative that was rejected, and why.** The tradeoff is the teaching. A solution presented without its alternatives is a fact to be memorised, which is what the mentorship directive exists to avoid.
+8. **Close by connecting to a rule already in the spec.** The section ends by making an existing decision legible — the reader should finish it understanding something they had already agreed to.
 
 Supporting rules:
 
