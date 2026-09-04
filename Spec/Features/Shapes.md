@@ -84,7 +84,7 @@ Each step of the cycle is a command, so undo walks back through the cycle rather
 
 | Scenario | Behavior |
 |---|---|
-| `Tab` with nothing selected | Acts on the most recently created object. Whether it should instead act on whatever is under the cursor is unresolved — see TASKS `#4.1`. |
+| `Tab` with nothing selected | Acts on the most recently created object. Whether it should instead act on whatever is under the cursor is not yet specified. |
 | `Tab` on an object that is not a stroke | Cycling on a selected [connector](Connectors.md) switches its routing, and `Tab` on a bound stroke converts it to a connector. Behavior on a text box, icon, or link card is not yet specified. |
 | A stroke matches no candidate well | The algorithm ranks rather than thresholds, so a candidate is always returned. Whether a poor best-fit should be suppressed is not yet specified. |
 | `Tab` cycling past `original` | Not yet specified. |

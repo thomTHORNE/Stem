@@ -76,5 +76,5 @@ There is no loading state specified for the moment between insert and fetch comp
 | A fetch fails, or the machine is offline | Not yet specified. |
 | `Cmd+K` in the browser build | The `PlatformAdapter` returns "unsupported". What the user sees is not yet specified. |
 | A `LinkCard`'s target is deleted or made private | The cached title and icon remain. Refresh behavior against a dead target is not yet specified. |
-| Where an inserted link lands — at the cursor or at the viewport center | Unresolved. See TASKS `#8.3`. |
-| A bookmark card's `description` | The style renders a description, but `LinkCard` has no `description` field. See TASKS `#1.3`. |
+| Where an inserted link lands — at the cursor or at the viewport center | Not yet specified. |
+| A bookmark card's `description` | The style renders a description, but `LinkCard` has no `description` field. What it renders instead is not yet specified. |

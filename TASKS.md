@@ -244,9 +244,6 @@ Atomic writes and the journal are well specified. What is not specified is every
 <br>
 - [ ] `#10.8` `MINOR` **Thumbnail rendering cost against the save cadence**
     A 400×300 PNG is rendered on save, and saves fire 800ms after the last mutation plus every 30s during continuous activity. Whether a thumbnail is rendered on every one of those, or on a slower cadence.
-<br>
-- [ ] `#10.9` `MINOR` **Viewport save cadence**
-    `viewport` is persisted per board, and panning mutates it continuously. Whether a viewport change marks the board dirty like any other mutation.
 :::
 
 ::: toggle `#11` Board Grid

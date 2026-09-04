@@ -48,6 +48,10 @@ Journaling commands rather than snapshots is only possible because every mutatio
 
 `viewport` is saved with the board and restored on open. See [Canvas & Viewport](Canvas%20&%20Viewport.md).
 
+A viewport change never marks the board dirty and never schedules a write of its own. Panning is not a document change — it emits no command and cannot be undone, see [Command Layer](../Architecture/Command%20Layer.md) — so it does not earn a save. The viewport rides along with the next write that happens for another reason, and the blur and `before-quit` saves fire regardless of dirty state, so a session spent reading rather than editing still persists where you were looking.
+
+A crash therefore restores the last written viewport, which may be older than the one at the crash. That is accepted: the journal replays what you drew, not where you were standing, and losing the latter costs nothing you made.
+
 ---
 
 ## States
@@ -55,7 +59,7 @@ Journaling commands rather than snapshots is only possible because every mutatio
 | State | |
 |---|---|
 | **Clean** | Board file matches the scene. No pending write. |
-| **Dirty** | Mutations since the last save. A debounced write is scheduled. |
+| **Dirty** | Scene mutations since the last save. A debounced write is scheduled. |
 | **Writing** | A `.tmp` file exists and has not yet been renamed. |
 | **Journal ahead** | On open, `<id>.journal` is newer than `<id>.json`. Recovery is offered. |
 
@@ -78,6 +82,7 @@ None of these is surfaced to the user. There is no dirty indicator and no save s
 |---|---|
 | A crash during a save | The rename either happened or it did not. The previous board file survives intact. |
 | A crash between saves | The journal covers the gap, if the last N commands are enough to cover it. Recovery is offered on open. |
+| A crash after panning, with no scene mutation since the last save | The board is not dirty and the journal is not ahead, so no recovery is offered. The viewport is restored as of the last write. Nothing was lost. |
 | `index.json` disagrees with the contents of `boards/` | Not yet specified. |
 | The boards directory is pointed at iCloud and two machines write the same board | Not yet specified. |
 | The boards directory is changed in Settings while boards exist | Not yet specified. |

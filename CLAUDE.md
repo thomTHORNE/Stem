@@ -193,7 +193,7 @@ Supporting rules:
 
 - **Plain, direct prose.** No marketing language. No hedging.
 - **Decisions are stated as facts.** "A stroke is discarded on release and replaced by its best-fit primitive." Not "A stroke could be replaced by..."
-- **Open questions are resolved before writing.** Don't leave inline TBDs or unresolved forks in the spec.
+- **Open questions are resolved before writing.**
 - **Anything not fully understood is deferred to Ideas.md.** A half-specced feature is worse than no spec.
 - **No padding.** If a section doesn't have meaningful content, say so briefly and move on.
 - **State a rule once, in the file that owns it.** Data Model owns fields, Keybindings owns keys, Architecture owns technical decisions. Everywhere else references them.
@@ -295,7 +295,7 @@ Skills print what their skill file specifies. This section governs conversation.
 - Every decision made in conversation must be written into the spec before the task is considered done. Marking a task complete or moving on without writing the decision into the relevant spec file is not acceptable — the goal is to build the spec, not tick off tasks.
 - When an item is resolved, remove it from TASKS.md entirely. Do not leave completed items in TASKS.md.
 - Decisions recorded in the spec are settled. Reopen one when something new is known — not because it feels uncertain again.
-- Where a spec file states that something is "not yet specified", it must have a corresponding TASKS.md item. An unspecified behavior with no item is invisible.
+- **No todos in the spec, ever.** No TBDs, no "revisit this", no work items parked in the deliverable, no pointers to the tracker. An open question is resolved in the session that raised it, or the feature is deferred to Ideas.md — a half-specced feature is worse than no spec. The single permitted deferral is a statement that something is **not yet specified**, which is a fact about the spec's coverage addressed to its reader, not a note-to-self about work outstanding. It must have a corresponding TASKS.md item so the gap stays visible, and it is a last resort rather than a way to close a section: reach for it when a decision genuinely cannot be made yet, not when making one is inconvenient.
 - **The spec never references TASKS.md.** No item IDs, no "see TASKS", no pointers to the tracker in any form. TASKS.md tracks work against the spec; the spec is the product of that work and has no knowledge of it. A spec file may state that something is not yet specified — that is a fact about the spec — but naming the item that will resolve it is tracker bookkeeping leaking into the deliverable, and it dangles the moment that item is renumbered or, on resolution, removed.
 - Diagrams are derived, never authoritative. Where a diagram and the prose it illustrates disagree, the prose wins and the diagram is the defect. A change to any field, relationship, or rule a diagram depicts is not complete until that diagram is updated in the same edit. A spec whose picture disagrees with its text is worse than one with no picture, because the picture is what gets read.
 
