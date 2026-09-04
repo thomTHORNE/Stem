@@ -78,7 +78,7 @@ Stem/
 
 **Active work lives in `Spec/`.** `stem-spec.md` is the original single-file spec that `Spec/` was split from. It is fully superseded — every section has a destination and nothing was dropped — and it is kept only until the split has been reviewed. Do not read it, write to it, or cite it. If the split lost something, that is a defect in `Spec/`, and the fix is in `Spec/`.
 
-**`Research/` and `Learning/`** do not exist yet. Their conventions are documented below and the directories appear when something is written into them.
+**`Research/`** does not exist yet. Its conventions are documented below and the directory appears when something is written into it.
 
 ---
 
