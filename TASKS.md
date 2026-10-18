@@ -15,7 +15,7 @@ Resolved tasks are removed from TASKS.md.
 - `GAP` — incomplete or inconsistent spec that would cause a developer to make a wrong assumption.
 - `MINOR` — should be addressed but low risk if deferred; implementation can proceed without it.
 
-Items marked **§19** were carried across from the original spec's own open questions. Everything else surfaced while splitting it.
+Items marked **§19** were carried across from the original spec's own open questions. Everything else surfaced while splitting it, or while aligning the spec with [Foundation](Foundation.md).
 
 
 
