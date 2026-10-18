@@ -125,7 +125,7 @@ Research/
 │   └── <Topic>.md
 └── <Initiative>/
     ├── <Initiative>.md
-    ├── Origin.md           ← frozen, if promoted from Ideas.md
+    ├── Origin.md           ← frozen, if seeded by a prior record
     └── <Topic>/
         └── <Topic>.md
 ```

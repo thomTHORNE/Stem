@@ -19,7 +19,7 @@ Items marked **§19** were carried across from the original spec's own open ques
 
 
 
-## Alignment 1 — Foundation
+## Alignment 1 — Data & Architecture
 
 ::: toggle `#1` Data Model
 The object schema is the source of truth for the board file format. Anything undefined here is undefined in the file on disk.
