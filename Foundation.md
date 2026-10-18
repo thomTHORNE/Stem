@@ -79,3 +79,21 @@ Stem starts with the board. Freeform drawing and writing are immediate and need 
 The board is where you spend most of your time, so it stays constrained: few choices, nothing to configure. Configuration lives off the board, where cognition types are defined and refined, and a defined type is ready to place on any board at once.
 
 Stem never asks you to choose a structure before you start, never moves a thought into a block on its own, and never brings configuration onto the board.
+
+---
+
+## Terms
+
+**Thought** — anything you put into Stem, at any size: a stroke, a sentence, a question. The unit everything else is built from.
+
+**Cognition type** — Stem's named shape for a recurring way of working on something: its sections and its visual design. A type is defined off the board and has one definition. Changing it changes the type; a variation is a new type with its own name.
+
+**Idea · Learning · Action** — the first cognition types: developing something new, understanding something that exists, carrying something out.
+
+**Cognition block** — an instance of a cognition type on a board, holding real thoughts.
+
+**Integration** — a block whose content lives in an outside system.
+
+**Board** — the infinite canvas a thought is put down on, as the spec defines it.
+
+**Freeform** — drawing and writing directly on the board, outside any block.
