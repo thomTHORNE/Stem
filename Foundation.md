@@ -31,3 +31,51 @@ Your thinking is the most important thing in Stem. Every other part of the syste
 **AI responds; it does not author.** AI helps you recall what you have written and lets you talk a topic through. Its words always read as responses. The parts of Stem that carry significance, priority, and action belong to you, and nothing in how AI output looks or behaves borrows from them. AI content cannot be mistaken for yours, by design or by accident.
 
 **Nothing leaves without consent.** Stem sends none of your thinking anywhere on its own. Anything sent to a cloud model or an integration goes only with your informed consent, and you know exactly what is sent.
+
+---
+
+## Messiness is honest
+
+A thought rarely arrives finished. It arrives as a hunch you cannot justify yet, a sketch that is half wrong, a question you do not know how to answer. Stopping to tidy it — to phrase it properly, to decide where it goes — costs the thought itself. Self-editing at the moment of capture is the friction that loses most of what a person thinks.
+
+The untidy parts are not waste either. A doubt, a dead end, a pivot and a backtrack are how understanding is actually reached. Feeling lost is part of the work, and the record of being lost is information: it shows where a problem was hard and how you got through it.
+
+So Stem accepts a thought in whatever state it arrives and keeps it in that state. Follow the intuition first; whether it was right can be decided later. Cleanup exists, and it is always something you ask for, never something done to you.
+
+Stem never tidies, files, or corrects on its own, and never requires a thought to be finished, named, or placed before it can exist. Nothing is discarded unless you discard it.
+
+---
+
+## Thinking about thinking
+
+Most tools store what you found. How you found it — which questions you return to, where you stall, what you abandon — is lost, and with it the chance to understand how your own mind works.
+
+Stem gives that understanding a place. Over the base where you normally work sits a second layer, like tracing paper laid over a drawing: the work stays visible underneath, and the layer is where you look at it from one step back. It is a space for self-awareness to develop on its own terms and at its own pace, not a report delivered to you.
+
+The ownership rules hold here as everywhere else. Anything Stem or an AI contributes to this layer reads as a response.
+
+The meta layer never changes the work beneath it, and nothing on it is presented as a conclusion about you. Conclusions are yours to draw.
+
+---
+
+## Recollecting instead of filing
+
+People do not remember where they put a thought. They remember what it was about, what it was near, what they were stuck on at the time. A system that can only find what was filed correctly asks you to predict, at the moment of writing, how you will look for it months later — and the prediction is usually wrong.
+
+Stem does not ask you to predict. Everything you put down is indexed — freeform drawing and writing, diagrams, markdown, cognition blocks, integrations — and you find it by asking for it in your own words. Results are ranked by what they mean, not by whether they contain the word you happened to type.
+
+This is what makes the rest affordable. Thoughts can stay messy and unfiled because finding them never depended on filing.
+
+Stem never requires a thought to be named, tagged, or placed in order to be found. A result is always your thought itself, shown where it lives. An AI may help you get to it; it never stands in for it.
+
+---
+
+## Growing with the thought
+
+Thoughts grow. A tool that suits the first minute of an idea — a blank surface, nothing to set up — is wrong for its third week, and a tool built for the third week is too heavy for the first minute. Growth also repeats: people approach the same kinds of problems in the same way, and redrawing the same structure every time is administration, not thinking.
+
+Stem starts with the board. Freeform drawing and writing are immediate and need nothing decided first. When a thought starts developing along a pattern you recognise — an idea taking shape, a subject being learned, an action being carried out — a cognition block gives it the structure that pattern needs: sections with distinct purposes, interactive pieces where they help, and a visual design built for that kind of thinking. Integrations extend the same reach to outside systems, brought into Stem as blocks.
+
+The board is where you spend most of your time, so it stays constrained: few choices, nothing to configure. Configuration lives off the board, where cognition types are defined and refined, and a defined type is ready to place on any board at once.
+
+Stem never asks you to choose a structure before you start, never moves a thought into a block on its own, and never brings configuration onto the board.
