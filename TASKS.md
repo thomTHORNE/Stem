@@ -19,6 +19,28 @@ Items marked **§19** were carried across from the original spec's own open ques
 
 
 
+## Alignment 0 — Pivot
+
+::: toggle `#15` Pivot
+Foundation.md is the anchor the spec now answers to, and the spec was written before it. These items bring the spec's top-level documents into line.
+
+[Foundation.md](Foundation.md)
+- - -
+- [ ] `#15.1` `GAP` **v1 scope has no home**
+    The v1 non-goals table sits in Design Principles, where principles stay fixed and scope changes every release. It moves to a new `Spec/Scope.md` stating, per version, what is included, what is excluded, and why. Two rows no longer hold as written: "AI anything" is contradicted by Foundation's recollection and conversation, and "Templates" needs restating so it is not read as excluding cognition types. Which pillars ship in v1 — recollection, cognition blocks, the meta layer, the GitHub integration — is decided here.
+<br>
+- [ ] `#15.2` `GAP` **Design Principles answers to "zero distance", not to Foundation**
+    Its opening names "zero distance between a thought and its representation" as the thing everything is subordinate to, and Foundation replaces that root. Each principle names the Foundation section it derives from; all five now trace. *Constraint over configuration* claims every feature; Foundation scopes it to the board, with configuration living off it.
+<br>
+- [ ] `#15.3` `GAP` **The AI principle is not written**
+    Foundation states that AI responds and never authors. The design principle that turns this into visual language and function does not exist: AI output never carries the significance, priority, or action affordances of the user's own content, and cannot be mistaken for it by design or by accident. Without it, the first AI surface built sets the precedent instead.
+<br>
+- [ ] `#15.4` `GAP` `Deps: #15.1` **CLAUDE.md describes Stem before the pivot**
+    "What Stem is" calls Stem Notion-adjacent and names zero distance as its root. The repo tree omits `Foundation.md`, nothing states Foundation's authority over `Spec/`, and the spec domain table lists the v1 non-goals under Design Principles and has no row for Scope.
+:::
+
+
+
 ## Alignment 1 — Data & Architecture
 
 ::: toggle `#1` Data Model
@@ -52,6 +74,9 @@ The object schema is the source of truth for the board file format. Anything und
 <br>
 - [ ] `#1.9` `MINOR` **`z` behavior across `Tab` conversion is undefined**
     `Tab` replaces a stroke with a shape, and a bound stroke with a connector. Whether the replacement inherits the original's `z` or takes the next one is unstated. Inheriting preserves the picture; taking the next one silently brings tidied objects to the front.
+<br>
+- [ ] `#1.10` `GAP` **Content carries no provenance**
+    Foundation makes original and reference a fact Stem knows: original is written or drawn in Stem, everything arriving from elsewhere is a reference, and references are read-only. No object in the schema can record which it is. Strokes, shapes, and connectors are always drawn in Stem; text boxes are not, because text can be pasted; link cards hold fetched content, which is a reference by definition.
 :::
 
 ::: toggle `#2` Architecture
@@ -155,6 +180,9 @@ Hit-testing underpins selection, connector binding, erase, and the pointer fallb
 <br>
 - [ ] `#6.5` `MINOR` **Whether selection survives a mode change**
     Tapping `D` with three objects selected. Keeping the selection makes `1`–`5` recolor it; dropping it makes them set the next-drawn color. Both are defensible, and the mode pill shows the active color either way.
+<br>
+- [ ] `#6.6` `GAP` `Deps: #1.10` **Copy and paste is specified nowhere, and must carry provenance**
+    `Cmd+C` and `Cmd+V` are bound in Keybindings and have no behavior spec. Foundation adds a requirement the spec must meet: copying within Stem keeps each object's provenance, so your own text pasted back stays original, while anything pasted from outside Stem enters as a reference — your own writing from another tool included.
 :::
 
 
@@ -169,8 +197,11 @@ The text overlay is the largest single chunk of work in the build order and the 
 - [ ] `#7.1` `GAP` **Click versus drag on text box creation**
     A click uses the 240px default width; a drag sets the width. Where the threshold between the two gestures sits is unstated, and every click carries a few pixels of movement.
 <br>
-- [ ] `#7.2` `GAP` **Paste carrying unsupported marks**
+- [ ] `#7.2` `GAP` `Deps: #6.6` **Paste carrying unsupported marks**
     The supported set is bold, italic, code, strikethrough, link, and two list types. Pasting from a browser or a Notion page will carry headings, tables, and colors. Whether they are stripped, flattened, or rejected determines whether `TextBox.content` can be trusted to hold only what the spec allows.
+<br>
+- [ ] `#7.3` `GAP` `Deps: #1.10` **A read-only reference in the text overlay**
+    Writing assumes every text box is editable. A reference is read-only, so clicking into one, Write mode over one, and the text focus rule each need a defined behavior. Restating a reference — the only path to original — is writing a new text box beside it.
 :::
 
 ::: toggle `#8` Insert Menu & Links
@@ -214,6 +245,9 @@ Export is the point of the tool — the board is where you think, the export is 
 <br>
 - [ ] `#9.4` `MINOR` **An export larger than the receiving app accepts**
     Selection-first export exists precisely because a whole board is unusable in Notion, but nothing stops a user selecting all and pressing `Cmd+Shift+C` on a 4000px board.
+<br>
+- [ ] `#9.5` `GAP` `Deps: #13.4` **Export's reason predates the pivot**
+    The goal's premise — "the board is where you think, the export is what you keep" — and Export.md's governing insight rest on two things Foundation no longer holds: Notion as the destination, and a finished conclusion as the output. Copying a cluster out may still earn its place; its reason is restated in Foundation's terms, or the feature is narrowed. The goal description above is rewritten with it.
 :::
 
 ::: toggle `#10` Persistence
@@ -283,13 +317,16 @@ Atomic writes and the journal are well specified. What is not specified is every
 ::: toggle `#13` Notion
 [Spec/Integrations/Notion.md](Spec/Integrations/Notion.md)
 - - -
-- [ ] `#13.1` `GAP` **Whether the search path ships in v1** `§19`
+- [ ] `#13.1` `GAP` `Deps: #13.4` **Whether the search path ships in v1** `§19`
     The search-based mention picker needs an integration token and pages explicitly shared with the integration; paste-a-URL needs neither. The paste path is roughly two hours of work, the search path roughly a day plus setup friction — and the friction lands on the user, once, before the feature does anything.
 <br>
 - [ ] `#13.2` `MINOR` **A revoked or invalid token**
 <br>
 - [ ] `#13.3` `MINOR` **Search with no token configured**
     Whether the search path is hidden, disabled, or offers to configure one.
+<br>
+- [ ] `#13.4` `GAP` `Deps: #15.1` **Whether Notion survives the pivot**
+    Notion.md opens "Notion is Stem's only integration", and Links builds `Cmd+K` search around it. Under Foundation an integration is a block onto an outside system, and the v1 integration is GitHub. Notion becomes an integration in that sense, stays only as link cards from a pasted URL, or leaves v1.
 :::
 
 
