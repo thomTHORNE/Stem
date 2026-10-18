@@ -134,7 +134,7 @@ Research/
 
 ### Origin
 
-A topic entering `Research/` from `Ideas.md` carries its entry across as `Origin.md`, frozen and never edited. A topic that was never parked in `Ideas.md` has no `Origin.md` — it was written here from the start, and the topic document is its own first record.
+A topic entering `Research/` from a prior record — an `Ideas.md` entry, or a brief written to open a conversation — carries that record across as `Origin.md`, frozen and never edited. A topic with no prior record has no `Origin.md` — it was written here from the start, and the topic document is its own first record.
 
 `Origin.md` sits beside the document it seeded — at the initiative when an entry was promoted into one, at the topic when it was promoted into a standalone topic. References inside a frozen origin may no longer resolve; that is expected and they are not repaired.
 
