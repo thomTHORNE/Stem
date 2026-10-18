@@ -45,6 +45,7 @@ Stem/
 ├── CLAUDE.md               ← this file
 ├── TASKS.md                ← phase-by-phase task tracker with inline reasoning notes
 ├── Ideas.md                ← deferred ideas, not committed to spec
+├── Research/               ← ideas developed in parallel to the spec. See Research below.
 ├── .claude/skills/         ← project skills. /sitrep prints a conversation checkpoint.
 ├── stem-spec.md            ← the original monolithic spec. Superseded by Spec/ (see below).
 └── Spec/
@@ -77,8 +78,6 @@ Stem/
 ```
 
 **Active work lives in `Spec/`.** `stem-spec.md` is the original single-file spec that `Spec/` was split from. It is fully superseded — every section has a destination and nothing was dropped — and it is kept only until the split has been reviewed. Do not read it, write to it, or cite it. If the split lost something, that is a defect in `Spec/`, and the fix is in `Spec/`.
-
-**`Research/`** does not exist yet. Its conventions are documented below and the directory appears when something is written into it.
 
 ---
 
