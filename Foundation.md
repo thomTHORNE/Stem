@@ -38,6 +38,8 @@ Your thinking is the most important thing in Stem. Every other part of the syste
 
 A thought rarely arrives finished. It arrives as a hunch you cannot justify yet, a sketch that is half wrong, a question you do not know how to answer. Stopping to tidy it — to phrase it properly, to decide where it goes — costs the thought itself. Self-editing at the moment of capture is the friction that loses most of what a person thinks.
 
+The tool can add the same friction. Every choice the software asks for, every small target it makes you aim at, is attention taken from the thought you were holding.
+
 The untidy parts are not waste either. A doubt, a dead end, a pivot and a backtrack are how understanding is actually reached. Feeling lost is part of the work, and the record of being lost is information: it shows where a problem was hard and how you got through it.
 
 So Stem accepts a thought in whatever state it arrives and keeps it in that state. Follow the intuition first; whether it was right can be decided later. Cleanup exists, and it is always something you ask for, never something done to you.
