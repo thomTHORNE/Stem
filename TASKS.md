@@ -26,16 +26,13 @@ Foundation.md is the anchor the spec now answers to, and the spec was written be
 
 [Foundation.md](Foundation.md)
 - - -
-- [ ] `#15.1` `GAP` **v1 scope has no home**
-    The v1 non-goals table sits in Design Principles, where principles stay fixed and scope changes every release. It moves to a new `Spec/Scope.md` stating, per version, what is included, what is excluded, and why. Two rows no longer hold as written: "AI anything" is contradicted by Foundation's recollection and conversation, and "Templates" needs restating so it is not read as excluding cognition types. Which pillars ship in v1 — recollection, cognition blocks, the meta layer, the GitHub integration — is decided here.
-<br>
 - [ ] `#15.2` `GAP` **Design Principles answers to "zero distance", not to Foundation**
     Its opening names "zero distance between a thought and its representation" as the thing everything is subordinate to, and Foundation replaces that root. Each principle names the Foundation section it derives from; all five now trace. *Constraint over configuration* claims every feature; Foundation scopes it to the board, with configuration living off it.
 <br>
 - [ ] `#15.3` `GAP` **The AI principle is not written**
     Foundation states that AI responds and never authors. The design principle that turns this into visual language and function does not exist: AI output never carries the significance, priority, or action affordances of the user's own content, and cannot be mistaken for it by design or by accident. Without it, the first AI surface built sets the precedent instead.
 <br>
-- [ ] `#15.4` `GAP` `Deps: #15.1` **CLAUDE.md describes Stem before the pivot**
+- [ ] `#15.4` `GAP` **CLAUDE.md describes Stem before the pivot**
     "What Stem is" calls Stem Notion-adjacent and names zero distance as its root. The repo tree omits `Foundation.md`, nothing states Foundation's authority over `Spec/`, and the spec domain table lists the v1 non-goals under Design Principles and has no row for Scope.
 :::
 
@@ -325,7 +322,7 @@ Atomic writes and the journal are well specified. What is not specified is every
 - [ ] `#13.3` `MINOR` **Search with no token configured**
     Whether the search path is hidden, disabled, or offers to configure one.
 <br>
-- [ ] `#13.4` `GAP` `Deps: #15.1` **Whether Notion survives the pivot**
+- [ ] `#13.4` `GAP` **Whether Notion survives the pivot**
     Notion.md opens "Notion is Stem's only integration", and Links builds `Cmd+K` search around it. Under Foundation an integration is a block onto an outside system, and the v1 integration is GitHub. Notion becomes an integration in that sense, stays only as link cards from a pasted URL, or leaves v1.
 :::
 

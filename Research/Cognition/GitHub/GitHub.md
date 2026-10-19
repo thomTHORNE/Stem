@@ -17,6 +17,7 @@ An integration that brings a GitHub repository onto the board as a block: search
 - **How git runs.** Commit, pull, and push from a desktop app: shelling out to an installed git, or a library inside the app. Each has platform consequences that need verifying before anything is stated.
 - **Annotations on a changing document.** An annotation anchors to rendered text. When the file changes upstream, what happens to the anchor.
 - **Scope of the block.** How much of a repository one block shows: a whole repo, a folder, a single document.
+- **Images in a rendered document.** A README or doc may embed images. The canvas carries no raster content, and whether a rendered document inside a block is an exception — and whether its images are references like the rest of its content — is unresolved.
 
 ## Findings
 
