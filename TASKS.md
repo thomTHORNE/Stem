@@ -33,7 +33,10 @@ Foundation.md is the anchor the spec now answers to, and the spec was written be
     Foundation states that AI responds and never authors. The design principle that turns this into visual language and function does not exist: AI output never carries the significance, priority, or action affordances of the user's own content, and cannot be mistaken for it by design or by accident. Without it, the first AI surface built sets the precedent instead.
 <br>
 - [ ] `#15.4` `GAP` **CLAUDE.md describes Stem before the pivot**
-    "What Stem is" calls Stem Notion-adjacent and names zero distance as its root. The repo tree omits `Foundation.md`, nothing states Foundation's authority over `Spec/`, and the spec domain table lists the v1 non-goals under Design Principles and has no row for Scope.
+    "What Stem is" calls Stem Notion-adjacent, names zero distance as its root, and describes a desktop-only Vue, TypeScript, and Electron app; the mentorship directive's list of new ground predates Flutter and mobile. The repo tree omits `Foundation.md`, nothing states Foundation's authority over `Spec/`, and the spec domain table lists the v1 non-goals under Design Principles and has no row for Scope.
+<br>
+- [ ] `#15.5` `GAP` **"Keyboard first" assumes every device has a keyboard**
+    v1 runs on an Android phone with full parity. Spring-loaded modes, hint letters, `Tab`, `Shift`, and `/` all need a hardware keyboard. The principle either becomes a desktop rule under a broader one, or is restated to hold on touch.
 :::
 
 
@@ -86,6 +89,9 @@ Structural decisions and the interfaces that carry them.
 <br>
 - [ ] `#2.2` `GAP` **Scene → Vue event bus contract is not enumerated**
     The reactive state Vue holds is listed — mode, active color, active weight, selection count, `isTextEditing`, menu open, board title — but the events that update it are described only as "a small typed event bus". The list of events is the whole width of the boundary between the scene graph and the framework, and keeping it thin is the entire point of the reactivity rule.
+<br>
+- [ ] `#2.3` `GAP` **The architecture files describe a stack that is no longer chosen**
+    Architecture, Input, Rendering, and Build Order specify Vue 3, TypeScript, an HTML text overlay, Chromium-specific input APIs, and an Electron shell. Flutter is the working choice, held until the spike passes. Writing, Export, and Settings carry the same assumptions at feature level: text as HTML, SVG text as `foreignObject`, and `safeStorage`.
 :::
 
 
@@ -252,9 +258,6 @@ Atomic writes and the journal are well specified. What is not specified is every
 
 [Spec/Features/Persistence.md](Spec/Features/Persistence.md)
 - - -
-- [ ] `#10.1` `BLOCKER` **Concurrent writes when the boards directory is a sync folder**
-    The directory is user-configurable so it can sit in iCloud or Dropbox, which is stated as a feature. Two machines with Stem open on the same board then both autosave every 800ms into a folder that resolves conflicts by filename. Atomic rename protects a single writer from a crash; it does nothing against a second writer. Either the sync case is supported and needs a rule, or it is stated as unsupported.
-<br>
 - [ ] `#10.2` `GAP` **Board storage location on first run** `§19`
     Default to `<userData>/boards/`, or ask for a folder on first run so it can sit in iCloud from day one? Asking on first run puts a filesystem decision in front of a user who wanted to draw. Defaulting means the boards move later, which is `#10.4`.
 <br>
@@ -275,6 +278,9 @@ Atomic writes and the journal are well specified. What is not specified is every
 <br>
 - [ ] `#10.8` `MINOR` **Thumbnail rendering cost against the save cadence**
     A 400×300 PNG is rendered on save, and saves fire 800ms after the last mutation plus every 30s during continuous activity. Whether a thumbnail is rendered on every one of those, or on a slower cadence.
+<br>
+- [ ] `#10.9` `BLOCKER` **Boards sync across devices, and the spec has no sync**
+    Scope includes Stem's sync service. Persistence specifies one JSON file per board in a local directory, synced only by pointing that directory at iCloud or Dropbox — a model that two writing devices already break. Persistence is restated as local-first storage with sync on top.
 :::
 
 ::: toggle `#11` Board Grid

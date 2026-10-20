@@ -19,16 +19,19 @@ A version may withhold a pillar of Foundation, but never break one of its refusa
 | **The board** | Everything specified in `Features/`: canvas and viewport, modes, drawing, shapes, connectors, selection, writing, the insert menu, links, export, persistence, the board grid, and settings. |
 | **Ownership** | Original and reference as Foundation defines them, read-only references, and informed consent before anything leaves the device. |
 | **Cognition blocks** | Cognition types defined off the board and placed on it as blocks. |
-| **The GitHub integration** | A repository on the board as a block: searching and navigating it, commit, pull, and push, and annotating a rendered document. |
+| **The GitHub integration** | A repository on the board as a block, through GitHub's API: searching and navigating it, committing to it, and annotating a rendered document. |
 | **Board search** | Finding a board by the words in it: its title and the text it holds. Matches words, not meaning. |
 | **Images** | Images placed on the canvas by pasting or dropping a file. An image arrives from outside Stem, so it is a reference. |
+| **Platforms** | Android, macOS, and Windows, with full parity: every capability on every platform, each through the input that device has. |
+| **Sync** | Boards sync across your devices through Stem's sync service. Every device keeps a full local copy and works offline. |
 
 ### Excluded
 
 | Excluded | |
 |---|---|
 | Collaboration | Stem is a personal tool. No multi-user model, no presence, no shared state. |
-| Mobile | Desktop only. The interaction model is a trackpad and a full keyboard. |
+| iOS and Linux | v1 targets the platforms it can be tested on. The stack keeps both within reach. |
+| Sync encryption on the device | The sync service can read synced boards in v1. Encrypting before upload arrives in a later version. |
 | Layers | `z` is creation order and there is no UI for it. |
 | AI | Every AI surface — recollection, conversation, and talking a document through in the GitHub block — arrives together in a later release, on one runtime and one consent flow. Foundation's rules for AI hold now and apply from the first surface built. |
 | Recollection | Finding a thought by asking for it in your own words depends on AI and arrives with it. Until then, board search matches words. |
