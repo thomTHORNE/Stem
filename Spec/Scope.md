@@ -6,6 +6,8 @@ What each version of Stem includes and excludes, and why.
 
 A version includes a feature as a commitment to what the product is. How the feature behaves is specified in `Features/` once it is understood, not before.
 
+A version may withhold a pillar of Foundation, but never break one of its refusals. What ships must stay true to Foundation even where it does not yet deliver all of it.
+
 ---
 
 ## v1
