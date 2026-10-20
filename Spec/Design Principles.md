@@ -53,22 +53,3 @@ Five colors, three weights. No color picker, no line-style menu, no properties p
 A constrained palette is not a limitation to work around — it is what makes a board legible weeks later, and what removes a decision from every single mark.
 
 > In practice: color and weight are stored as slots rather than resolved values, which is also what lets an existing board read correctly in both light and dark themes. See [Visual Design](Visual%20Design.md).
-
----
-
-## v1 non-goals
-
-These are excluded from v1 deliberately. They are not oversights, and none of them is blocked on the others.
-
-| Excluded | |
-|---|---|
-| Collaboration | Stem is a personal tool. No multi-user model, no presence, no shared state. |
-| Mobile | Desktop only. The interaction model is a trackpad and a full keyboard. |
-| Layers | `z` is creation order and there is no UI for it. |
-| Grouping | Multi-select is transient and is not persisted. |
-| Templates | Every board starts empty. |
-| Presentation mode | Output leaves via [export](Features/Export.md), into a document that already has a reader. |
-| Image import | No raster content on the canvas. |
-| AI anything | |
-
-Excluding these is what makes the rest of v1 small enough to finish. Anything here worth reconsidering later lives in [Ideas.md](../Ideas.md), not in this table.

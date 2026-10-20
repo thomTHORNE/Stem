@@ -27,7 +27,7 @@ The start screen. A grid of board thumbnails, newest-updated first — the only 
 ### Keyboard
 
 - Arrow keys navigate cards.
-- `/` focuses a search-by-title field.
+- `/` focuses the search field.
 - `Cmd+N` creates a board and opens it immediately with an untitled name.
 
 `/` opening a search field here mirrors `/` opening the [insert menu](Insert%20Menu.md) on the canvas: in both places it means "start typing to find something."
@@ -43,7 +43,7 @@ The start screen. A grid of board thumbnails, newest-updated first — the only 
 | State | |
 |---|---|
 | **Browsing** | Default. Arrow keys navigate, `Enter` opens. |
-| **Searching** | `/` has focused the search field. Typing filters by title. |
+| **Searching** | `/` has focused the search field. Typing filters to boards whose title or text contains the query. |
 | **Renaming** | A card's title is an editable field. |
 | **Confirming delete** | A confirmation is pending. |
 
@@ -57,7 +57,8 @@ The empty state — a first run with no boards — is not yet specified.
 
 - Reads `index.json`; does not open board files to render.
 - Ordering is newest-updated first and is not user-configurable.
-- Search is by title only. Board contents are not searchable in v1.
+- Search matches words, not meaning. It covers a board's title and the text it holds: text boxes, shape labels, and link card titles. Drawings are not searchable.
+- Opening a board found by its text centers the viewport on the first match.
 - No folders, tags, or grouping of boards.
 - Delete requires confirmation. It is the only destructive action in Stem that does.
 

@@ -59,7 +59,7 @@ Selection is runtime state and is not persisted. A reopened board has nothing se
 |---|---|
 | **Empty** | Nothing selected. `Tab` falls back to the most recently created object; export falls back to the whole board. |
 | **Single** | One object. `Tab` and scaling act on it. |
-| **Multi** | More than one. Transient — there is no grouping in v1, and the selection is lost as soon as it is changed. |
+| **Multi** | More than one. Transient — the selection is lost as soon as it is changed. |
 
 The **Empty** state is load-bearing rather than trivial: several commands are defined by what they do when there is no selection, which is what lets them be pressed without first pointing at something.
 
@@ -69,7 +69,7 @@ The **Empty** state is load-bearing rather than trivial: several commands are de
 
 - **No handles**, in any mode, for any object type.
 - **No rotation in v1.** `Shape.rotation` is reserved and always `0`.
-- **No grouping in v1.** Multi-select is transient and never persisted.
+- Multi-select is transient and never persisted.
 - No z-order controls. `z` is creation order — see [Data Model](../Data%20Model.md#baseobject).
 - Selection is never persisted to the board file.
 

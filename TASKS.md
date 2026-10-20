@@ -15,11 +15,33 @@ Resolved tasks are removed from TASKS.md.
 - `GAP` — incomplete or inconsistent spec that would cause a developer to make a wrong assumption.
 - `MINOR` — should be addressed but low risk if deferred; implementation can proceed without it.
 
-Items marked **§19** were carried across from the original spec's own open questions. Everything else surfaced while splitting it.
+Items marked **§19** were carried across from the original spec's own open questions. Everything else surfaced while splitting it, or while aligning the spec with [Foundation](Foundation.md).
 
 
 
-## Alignment 1 — Foundation
+## Alignment 0 — Pivot
+
+::: toggle `#15` Pivot
+Foundation.md is the anchor the spec now answers to, and the spec was written before it. These items bring the spec's top-level documents into line.
+
+[Foundation.md](Foundation.md)
+- - -
+- [ ] `#15.2` `GAP` **Design Principles answers to "zero distance", not to Foundation**
+    Its opening names "zero distance between a thought and its representation" as the thing everything is subordinate to, and Foundation replaces that root. Each principle names the Foundation section it derives from; all five now trace. *Constraint over configuration* claims every feature; Foundation scopes it to the board, with configuration living off it.
+<br>
+- [ ] `#15.3` `GAP` **The AI principle is not written**
+    Foundation states that AI responds and never authors. The design principle that turns this into visual language and function does not exist: AI output never carries the significance, priority, or action affordances of the user's own content, and cannot be mistaken for it by design or by accident. Without it, the first AI surface built sets the precedent instead.
+<br>
+- [ ] `#15.4` `GAP` **CLAUDE.md describes Stem before the pivot**
+    "What Stem is" calls Stem Notion-adjacent, names zero distance as its root, and describes a desktop-only Vue, TypeScript, and Electron app; the mentorship directive's list of new ground predates Flutter and mobile. The repo tree omits `Foundation.md`, nothing states Foundation's authority over `Spec/`, and the spec domain table lists the v1 non-goals under Design Principles and has no row for Scope.
+<br>
+- [ ] `#15.5` `GAP` **"Keyboard first" assumes every device has a keyboard**
+    v1 runs on an Android phone with full parity. Spring-loaded modes, hint letters, `Tab`, `Shift`, and `/` all need a hardware keyboard. The principle either becomes a desktop rule under a broader one, or is restated to hold on touch.
+:::
+
+
+
+## Alignment 1 — Data & Architecture
 
 ::: toggle `#1` Data Model
 The object schema is the source of truth for the board file format. Anything undefined here is undefined in the file on disk.
@@ -52,6 +74,9 @@ The object schema is the source of truth for the board file format. Anything und
 <br>
 - [ ] `#1.9` `MINOR` **`z` behavior across `Tab` conversion is undefined**
     `Tab` replaces a stroke with a shape, and a bound stroke with a connector. Whether the replacement inherits the original's `z` or takes the next one is unstated. Inheriting preserves the picture; taking the next one silently brings tidied objects to the front.
+<br>
+- [ ] `#1.10` `GAP` **Content carries no provenance**
+    Foundation makes original and reference a fact Stem knows: original is written or drawn in Stem, everything arriving from elsewhere is a reference, and references are read-only. No object in the schema can record which it is. Strokes, shapes, and connectors are always drawn in Stem; text boxes are not, because text can be pasted; link cards hold fetched content, which is a reference by definition.
 :::
 
 ::: toggle `#2` Architecture
@@ -64,6 +89,9 @@ Structural decisions and the interfaces that carry them.
 <br>
 - [ ] `#2.2` `GAP` **Scene → Vue event bus contract is not enumerated**
     The reactive state Vue holds is listed — mode, active color, active weight, selection count, `isTextEditing`, menu open, board title — but the events that update it are described only as "a small typed event bus". The list of events is the whole width of the boundary between the scene graph and the framework, and keeping it thin is the entire point of the reactivity rule.
+<br>
+- [ ] `#2.3` `GAP` **The architecture files describe a stack that is no longer chosen**
+    Architecture, Input, Rendering, and Build Order specify Vue 3, TypeScript, an HTML text overlay, Chromium-specific input APIs, and an Electron shell. Flutter is the working choice, held until the spike passes. Writing, Export, and Settings carry the same assumptions at feature level: text as HTML, SVG text as `foreignObject`, and `safeStorage`.
 :::
 
 
@@ -155,6 +183,9 @@ Hit-testing underpins selection, connector binding, erase, and the pointer fallb
 <br>
 - [ ] `#6.5` `MINOR` **Whether selection survives a mode change**
     Tapping `D` with three objects selected. Keeping the selection makes `1`–`5` recolor it; dropping it makes them set the next-drawn color. Both are defensible, and the mode pill shows the active color either way.
+<br>
+- [ ] `#6.6` `GAP` `Deps: #1.10` **Copy and paste is specified nowhere, and must carry provenance**
+    `Cmd+C` and `Cmd+V` are bound in Keybindings and have no behavior spec. Foundation adds a requirement the spec must meet: copying within Stem keeps each object's provenance, so your own text pasted back stays original, while anything pasted from outside Stem enters as a reference — your own writing from another tool included.
 :::
 
 
@@ -169,8 +200,11 @@ The text overlay is the largest single chunk of work in the build order and the 
 - [ ] `#7.1` `GAP` **Click versus drag on text box creation**
     A click uses the 240px default width; a drag sets the width. Where the threshold between the two gestures sits is unstated, and every click carries a few pixels of movement.
 <br>
-- [ ] `#7.2` `GAP` **Paste carrying unsupported marks**
+- [ ] `#7.2` `GAP` `Deps: #6.6` **Paste carrying unsupported marks**
     The supported set is bold, italic, code, strikethrough, link, and two list types. Pasting from a browser or a Notion page will carry headings, tables, and colors. Whether they are stripped, flattened, or rejected determines whether `TextBox.content` can be trusted to hold only what the spec allows.
+<br>
+- [ ] `#7.3` `GAP` `Deps: #1.10` **A read-only reference in the text overlay**
+    Writing assumes every text box is editable. A reference is read-only, so clicking into one, Write mode over one, and the text focus rule each need a defined behavior. Restating a reference — the only path to original — is writing a new text box beside it.
 :::
 
 ::: toggle `#8` Insert Menu & Links
@@ -214,6 +248,9 @@ Export is the point of the tool — the board is where you think, the export is 
 <br>
 - [ ] `#9.4` `MINOR` **An export larger than the receiving app accepts**
     Selection-first export exists precisely because a whole board is unusable in Notion, but nothing stops a user selecting all and pressing `Cmd+Shift+C` on a 4000px board.
+<br>
+- [ ] `#9.5` `GAP` `Deps: #13.4` **Export's reason predates the pivot**
+    The goal's premise — "the board is where you think, the export is what you keep" — and Export.md's governing insight rest on two things Foundation no longer holds: Notion as the destination, and a finished conclusion as the output. Copying a cluster out may still earn its place; its reason is restated in Foundation's terms, or the feature is narrowed. The goal description above is rewritten with it.
 :::
 
 ::: toggle `#10` Persistence
@@ -221,9 +258,6 @@ Atomic writes and the journal are well specified. What is not specified is every
 
 [Spec/Features/Persistence.md](Spec/Features/Persistence.md)
 - - -
-- [ ] `#10.1` `BLOCKER` **Concurrent writes when the boards directory is a sync folder**
-    The directory is user-configurable so it can sit in iCloud or Dropbox, which is stated as a feature. Two machines with Stem open on the same board then both autosave every 800ms into a folder that resolves conflicts by filename. Atomic rename protects a single writer from a crash; it does nothing against a second writer. Either the sync case is supported and needs a rule, or it is stated as unsupported.
-<br>
 - [ ] `#10.2` `GAP` **Board storage location on first run** `§19`
     Default to `<userData>/boards/`, or ask for a folder on first run so it can sit in iCloud from day one? Asking on first run puts a filesystem decision in front of a user who wanted to draw. Defaulting means the boards move later, which is `#10.4`.
 <br>
@@ -244,6 +278,9 @@ Atomic writes and the journal are well specified. What is not specified is every
 <br>
 - [ ] `#10.8` `MINOR` **Thumbnail rendering cost against the save cadence**
     A 400×300 PNG is rendered on save, and saves fire 800ms after the last mutation plus every 30s during continuous activity. Whether a thumbnail is rendered on every one of those, or on a slower cadence.
+<br>
+- [ ] `#10.9` `BLOCKER` **Boards sync across devices, and the spec has no sync**
+    Scope includes Stem's sync service. Persistence specifies one JSON file per board in a local directory, synced only by pointing that directory at iCloud or Dropbox — a model that two writing devices already break. Persistence is restated as local-first storage with sync on top.
 :::
 
 ::: toggle `#11` Board Grid
@@ -283,13 +320,16 @@ Atomic writes and the journal are well specified. What is not specified is every
 ::: toggle `#13` Notion
 [Spec/Integrations/Notion.md](Spec/Integrations/Notion.md)
 - - -
-- [ ] `#13.1` `GAP` **Whether the search path ships in v1** `§19`
+- [ ] `#13.1` `GAP` `Deps: #13.4` **Whether the search path ships in v1** `§19`
     The search-based mention picker needs an integration token and pages explicitly shared with the integration; paste-a-URL needs neither. The paste path is roughly two hours of work, the search path roughly a day plus setup friction — and the friction lands on the user, once, before the feature does anything.
 <br>
 - [ ] `#13.2` `MINOR` **A revoked or invalid token**
 <br>
 - [ ] `#13.3` `MINOR` **Search with no token configured**
     Whether the search path is hidden, disabled, or offers to configure one.
+<br>
+- [ ] `#13.4` `GAP` **Whether Notion survives the pivot**
+    Notion.md opens "Notion is Stem's only integration", and Links builds `Cmd+K` search around it. Under Foundation an integration is a block onto an outside system, and the v1 integration is GitHub. Notion becomes an integration in that sense, stays only as link cards from a pasted URL, or leaves v1.
 :::
 
 

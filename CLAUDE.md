@@ -45,6 +45,7 @@ Stem/
 ├── CLAUDE.md               ← this file
 ├── TASKS.md                ← phase-by-phase task tracker with inline reasoning notes
 ├── Ideas.md                ← deferred ideas, not committed to spec
+├── Research/               ← ideas developed in parallel to the spec. See Research below.
 ├── .claude/skills/         ← project skills. /sitrep prints a conversation checkpoint.
 ├── stem-spec.md            ← the original monolithic spec. Superseded by Spec/ (see below).
 └── Spec/
@@ -77,8 +78,6 @@ Stem/
 ```
 
 **Active work lives in `Spec/`.** `stem-spec.md` is the original single-file spec that `Spec/` was split from. It is fully superseded — every section has a destination and nothing was dropped — and it is kept only until the split has been reviewed. Do not read it, write to it, or cite it. If the split lost something, that is a defect in `Spec/`, and the fix is in `Spec/`.
-
-**`Research/`** does not exist yet. Its conventions are documented below and the directory appears when something is written into it.
 
 ---
 
@@ -125,7 +124,7 @@ Research/
 │   └── <Topic>.md
 └── <Initiative>/
     ├── <Initiative>.md
-    ├── Origin.md           ← frozen, if promoted from Ideas.md
+    ├── Origin.md           ← frozen, if seeded by a prior record
     └── <Topic>/
         └── <Topic>.md
 ```
@@ -134,7 +133,7 @@ Research/
 
 ### Origin
 
-A topic entering `Research/` from `Ideas.md` carries its entry across as `Origin.md`, frozen and never edited. A topic that was never parked in `Ideas.md` has no `Origin.md` — it was written here from the start, and the topic document is its own first record.
+A topic entering `Research/` from a prior record — an `Ideas.md` entry, or a brief written to open a conversation — carries that record across as `Origin.md`, frozen and never edited. A topic with no prior record has no `Origin.md` — it was written here from the start, and the topic document is its own first record.
 
 `Origin.md` sits beside the document it seeded — at the initiative when an entry was promoted into one, at the topic when it was promoted into a standalone topic. References inside a frozen origin may no longer resolve; that is expected and they are not repaired.
 

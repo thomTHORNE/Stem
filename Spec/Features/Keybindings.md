@@ -79,7 +79,7 @@ Active on the [board grid](Board%20Grid.md) start screen.
 | `Enter` | Open |
 | `F2` | Rename |
 | `Delete` | Delete, with confirmation |
-| `/` | Focus search-by-title |
+| `/` | Focus board search |
 
 ### Hint mode
 
